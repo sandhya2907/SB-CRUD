@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+</head>
+<body>
+<h3>WELCOME TO EMPLOYEE DATA PAGE</h3>    <a th:href="@{/employee/register}">ADD</a><hr>
+<table border="1">
+<tr>
+<th>ID</th>
+<th>NAME</th>
+<th>SALARY</th>
+<th>ROLES</th>
+<th colspan="2">ACTION</th>
+</tr>
+<tr th:each="ob:${list}">
+<td th:text="${ob.empId}"/>
+<td th:text="${ob.empName}"/>
+<td th:text="${ob.empSalary}"/>
+<td th:text="${ob.empRoles}"/>
+<td><a th:href="@{/employee/edit/{id}(id=${ob.empId})}">EDIT</a>
+<td><a th:href="@{/employee/delete/{id}(id=${ob.empId})}">DELETE</a>
+
+</table>
+</body>
+</html>

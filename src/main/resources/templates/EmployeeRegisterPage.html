@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+</head>
+<body>
+<h3>WELCOME TO REGISTER PAGE</h3>
+<form th:action="@{/employee/create}" method="post" th:object="${emp}">
+<pre>
+NAME      <input type="text" th:field="*{empName}"/>
+
+SALARY    <input type="text" th:field="*{empSalary}"/>
+
+ROLES     <input type="checkbox" th:field="*{empRoles}" value="ADMIN"/>ADMIN    <input type="checkbox" th:field="*{empRoles}" value="DEVELOPER"/>DEVELOPER  <input type="checkbox" th:field="*{empRoles}" value="QA"/>QA  
+
+<input type="submit" value="Register">           <a th:href="@{/employee/all}">VIEW RECORDS</a>
+</pre>
+</form>
+<span th:text="${msg}"></span>
+</body>
+</html>
